@@ -1,0 +1,59 @@
+/*** Form Styles
+**********/
+
+
+
+.formGroup-1 label {
+    font-size: 26px;
+    font-weight: 600;
+    margin: 5px 0px;
+    width: 450px;
+    text-align: left;
+    background-color: #fff;
+}
+
+.formOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 480px;
+    font-size: 20px;
+    padding: 5px;
+    background-color: #fff;
+}
+
+
+
+
+.formOptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 480px;
+    font-size: 20px;
+    padding: 5px;
+    background-color: #fff;
+}
+
+
+.loginFormButtons {
+    flex-basis: 100px;
+    font-size: 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #000;
+}
+
+.formGroup a {
+    font-size: 20px;
+    color: #070707;
+    margin: 5px 0;
+    background-color: #fff;
+}
+

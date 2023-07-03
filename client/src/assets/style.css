@@ -1,0 +1,126 @@
+/***
+Recipes 
+********/
+
+/** Add recipe modal */
+.addModalContainer {
+  padding: 10px 5px;
+  background-color: #fff;
+}
+
+.addRecipeForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px auto;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.addRecipeBtn {
+  border: none;
+  background: none;
+  height: fit-content;
+  color: #195942;
+  border: none;
+}
+
+:hover.addRecipeBtn {
+  color: #213e7d;
+  cursor: pointer;
+}
+
+.addFormGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+  background-color: #fff;
+}
+
+.addFormGroup label {
+  font-size: 20px;
+  background-color: #fff;
+  font-weight: 600;
+  margin: 5px 0px;
+  text-align: left;
+}
+
+.addFormGroup input {
+  height: 35px;
+  width: 250px;
+  font-size: 18px;
+  padding: 7px;
+}
+
+
+
+/** Recipe pages */
+#recipePageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#userRecipePageTitle {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: flex-start;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+.titleLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-basis: 50%;
+  padding: 10px;
+}
+
+.titleRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-basis: 50%;
+  padding: 10px;
+}
+
+.titleRight h2 {
+  font-size: 20px;
+}
+
+#recipePageContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.recipeList {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#userRecipeTable {
+  width: 100%;
+  justify-content: center;
+}
+
+.tableHeader {
+  border-bottom: 0.5px solid #313131;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#userRecipeTable tbody td {
+  font-size: 18px;
+  text-align: center;
+  margin: 0px auto;
+}
