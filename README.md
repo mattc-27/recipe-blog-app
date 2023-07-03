@@ -12,9 +12,14 @@ Clone the repo
 `git clone https://github.com/mattc-27/recipe-blog-app`
 
 Install dependencies 
+`cd ./client`
 `npm install`
 
-Create PostgreSQL database from [createdb.sql](https://github.com/mattc-27/recipe-blog-app/blob/main/createdb.sql)
+`cd ./server`
+`npm install`
+
+Create PostgreSQL database
+[createdb.sql](https://github.com/mattc-27/recipe-blog-app/blob/main/createdb.sql)
 
 Set up local PostreSQL server 
 [postgresapp](https://postgresapp.com/)
@@ -23,7 +28,9 @@ Generate JWT signature and include in the .env file
 `JWT_TOKEN=SIGNATURE`
 
 Start the client
+`cd ./client`
 `npm run dev`
 
 Start the server
+`cd ./server`
 `nodemon server.js`
