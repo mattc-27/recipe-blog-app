@@ -1,5 +1,9 @@
 import { useState, useEffect, useContext } from 'react';
-import { UserProvider } from '../userContext'
+import { UserProvider } from '../userContext';
+
+import './nav.css';
+import './main.css';
+
 
 import {
   createBrowserRouter,
@@ -9,8 +13,8 @@ import {
   BrowserRouter
 } from 'react-router-dom';
 
-import Layout from './app/components/Layout';
-import AppLayout from './blog/AppLayout';
+import AppLayout from './app/components/AppLayout';
+import HomeLayout from './blog/HomeLayout';
 
 import Home from './blog/Home';
 
@@ -21,7 +25,8 @@ import Dashboard from './app/pages/Dashboard';
 import Profile from './app/pages/Profile';
 import UserRecipes from './app/recipes/UserRecipes';
 import ModifyRecipe from './app/pages/ModifyRecipe';
-
+import RecipePage from './blog/RecipePage';
+import Blog from './app/pages/Blog';
 
 const router = createBrowserRouter([
   {
@@ -33,21 +38,29 @@ const router = createBrowserRouter([
     element: <Login />
   },
   {
-    path: '/dashboard/:userId',
+    path: '/blog',
+    element: <Blog />
+  },
+  {
+    path: '/dashboard/:user_id',
     element: <Dashboard />
   },
   {
-    path: '/profile/:userId',
+    path: '/profile/:user_id',
     element: <Profile />
   },
   {
-    path: '/recipes/:userId/all',
+    path: '/recipes/:user_id/all',
     element: <UserRecipes />
   },
   {
-    path: '/recipes/:userId/:id/edit',
+    path: '/recipes/:user_id/:recipe_id/edit',
     element: <ModifyRecipe />
   },
+  {
+    path: '/recipes/:recipe_id',
+    element: <RecipePage />
+  }
 ])
 
 function App() {
@@ -57,17 +70,18 @@ function App() {
     <UserProvider>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Layout />}>
-            <Route path='/home/:userId' element={<Home />} />
-            <Route path='/dashboard/:userId' element={<Dashboard />} />
-            <Route path='/profile/:userId' element={<Profile />} />
-            <Route path='/recipes/:userId/all' element={<UserRecipes />} />
-            <Route path='/recipes/:userId/:id/edit' element={<ModifyRecipe />} />
+          <Route path='/' element={<AppLayout />}>
+            <Route path='/blog/:user_id' element={<Blog />} />
+            <Route path='/dashboard/:user_id' element={<Dashboard />} />
+            <Route path='/profile/:user_id' element={<Profile />} />
+            <Route path='/recipes/:user_id/all' element={<UserRecipes />} />
+            <Route path='/recipes/:user_id/:recipe_id/edit' element={<ModifyRecipe />} />
           </Route>
-          <Route element={<AppLayout />}>
+          <Route element={<HomeLayout />}>
             <Route index element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/recipes/:recipe_id' element={<RecipePage />} />
           </Route>
         </Routes>
       </BrowserRouter>

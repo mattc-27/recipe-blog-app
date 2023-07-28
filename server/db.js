@@ -5,9 +5,7 @@ const pool = new Pool({
     password: 'password',
     host: 'localhost',
     port: 5432,
-    database: 'recipe_app'
+    database: 'recipe_app_dev'
 });
 
 module.exports = pool;
-
-

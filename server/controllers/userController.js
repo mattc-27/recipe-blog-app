@@ -40,11 +40,11 @@ const userAuth = (req, res, next) => {
 // get user 
 const fetchUser = async (req, res) => {
     try {
-        const { id } = req.params;
-        const results = await pool.query('SELECT * FROM users WHERE id = $1', [id]);
+        const { user_id } = req.params;
+        const results = await pool.query('SELECT * FROM users WHERE user_id = $1', [user_id]);
         if (results.rows.length > 0) {
-            const { username, location, id } = results.rows[0]
-            res.json({ username, location, id });
+            const { username, location, user_id } = results.rows[0]
+            res.json({ username, location, user_id });
             console.log(results.rows[0])
         }
         if (results.rows.length <= 0) {
@@ -59,12 +59,12 @@ const fetchUser = async (req, res) => {
 // update profile
 const updateUser = async (req, res) => {
     try {
-        const { id } = req.params;
+        const { user_id } = req.params;
         const { username, location } = req.body;
       
         const updateProfile = await pool.query(
-            "UPDATE users SET (username, location) = ($1, $2) WHERE id = $3 RETURNING *",
-            [username, location, id]
+            "UPDATE users SET (username, location) = ($1, $2) WHERE user_id = $3 RETURNING *",
+            [username, location, user_id]
         );
         console.log(updateProfile.rows[0])
         res.status(200).send({ message: 'Profile updated' });

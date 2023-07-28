@@ -10,30 +10,27 @@ import '../../main.css';
 
 
 const UserRecipes = () => {
-    const { id } = useParams();
+    const { user_id } = useParams();
     const { userDetails } = useContext(UserContext);
     const [userInfo, setUserInfo] = useState({});
 
 
     return (
-        <Fragment>
-            <div className='appContainer' id="recipePage" >
-                <div className='appContent'>
-                    <div id="recipePageTitle" className='appTitle'>
-                        <div className='recipePageHeader'>
-                            <h2>My recipes</h2>
-                        </div>
-                        <div id='addNewRecipe'>
-                            <AddRecipe />
-                        </div>
-                    </div>
+        <div className='mainContainer-b' id='userRecipes'>
+            <div className='userRecipesPage' >
+             
+                <div className='userRecipesTitle'>
+                    <h2>My recipes</h2>
+                    <AddRecipe />
                 </div>
-                <div className='appContent' id='recipePageContent'>
+               
+              
+                <div className='userRecipesContent'>
                     <RecipeList />
                 </div>
             </div>
-        </Fragment>
+        </div>
     );
-};
+}
 
 export default UserRecipes;

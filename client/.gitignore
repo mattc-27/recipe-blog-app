@@ -7,10 +7,16 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+
 node_modules
 dist
 dist-ssr
 *.local
+
+./src/nav.css
+./src/style.css
+./src/assets
+./src/app/components/Layout.jsx
 
 # Editor directories and files
 .vscode/*

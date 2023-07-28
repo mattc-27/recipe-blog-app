@@ -8,7 +8,7 @@ import '../../main.css';
 
 
 const AddRecipe = () => {
-    const { userId } = useParams();
+    const { user_id } = useParams();
 
     const [show, setShow] = useState(false);
 
@@ -20,7 +20,7 @@ const AddRecipe = () => {
 
     const onSubmitForm = async (e) => {
         e.preventDefault();
-        const body = { title: title, description: description, created_by: userId };
+        const body = { title: title, description: description, created_by: user_id };
         try {
             const response = await fetch(`/api/recipes/new`, {
                 method: "POST",
@@ -28,7 +28,7 @@ const AddRecipe = () => {
                 body: JSON.stringify(body)
             })
             console.log(`Added new recipe:`)
-            window.location = `/recipes/${userId}/all`;
+            window.location = `/recipes/${user_id}/all`;
         } catch (err) {
             console.error(err.message);
         }
@@ -48,14 +48,15 @@ const AddRecipe = () => {
             <Modal
                 show={show}
                 onHide={handleClose}
+                style={{ height: 'auto' }}
             >
                 <Modal.Header closeButton className='bg-white'>
                     <h2 className='bg-white'>Create New Recipe</h2>
                 </Modal.Header>
                 <Modal.Body >
-                    <div className="addModalContainer">
-                        <form id='addRecipeForm'>
-                            <div className='formGroup-1' id='addFormGroup'>
+                    <div className="formContainer-b" id='addModalContainer'>
+                        <form className='formStyle-1' id='addRecipeForm'>
+                            <div className='formGroup-1'>
                                 <label>Title</label>
                                 <input
                                     type="text"
@@ -64,7 +65,7 @@ const AddRecipe = () => {
                                     onChange={e => setTitle(e.target.value)} />
 
                             </div>
-                            <div className='formGroup-1' id='addFormGroup'>
+                            <div className='formGroup-1'>
                                 <label>Description</label>
                                 <input
                                     type="text"
@@ -73,17 +74,19 @@ const AddRecipe = () => {
 
                                 />
                             </div>
+                            <div className='formGroup-1' id='addRecipeButtons' >
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                                <Button className='btnStyle-a' id='recipeSaveButton' onClick={onSubmitForm}>
+                                    Save Changes
+                                </Button>
+                            </div>
                         </form>
                     </div>
+
+
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                    <Button className='btnStyle-1' id='recipeSaveButton' onClick={onSubmitForm}>
-                        Save Changes
-                    </Button>
-                </Modal.Footer>
             </Modal>
         </Fragment>
     );

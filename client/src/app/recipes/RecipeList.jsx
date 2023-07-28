@@ -6,7 +6,7 @@ import { BsPencilSquare } from 'react-icons/bs';
 import '../../main.css';
 
 export default function RecipeList() {
-    const { userId } = useParams();
+    const { user_id } = useParams();
     const [recipes, setRecipes] = useState([]);
 
     const { userProfile, setUserProfile } = useContext(UserContext);
@@ -15,7 +15,7 @@ export default function RecipeList() {
         const fetchData = async () => {
             //const id = userDetails.id;
             try {
-                const userRecipes = await fetch(`/api/recipes/${userId}/all`);
+                const userRecipes = await fetch(`/api/recipes/${user_id}/all`);
                 const data = await userRecipes.json();
                 setRecipes(data);
                 console.log(data);
@@ -30,37 +30,39 @@ export default function RecipeList() {
 
     return (
 
-        <div  className='appContent' id='recipeList'>
+      
             <table id='userRecipeTable'>
                 <tbody>
-                    <tr className='tableHeader'>
-                        <th>id</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th id='createdAtH'>Created</th>
-                        <th>Modify</th>
+                    <tr className='tableHeader' >
+                        <th id="tableId">id</th>
+                        <th id="tableName">Name</th>
+                        {/* <th id="tableDesc">Description</th> */}
+                        <th id="tableCreated">Created</th>
+                        <th id="tableModify">Modify</th>
                     </tr>
                     {recipes.map(recipe => (
-                        <tr key={recipe.id} className='mt-5'>
-                            <td className='p-3'>
-                                {recipe.id}
+                        <tr key={recipe.recipe_id} >
+                            <td>
+                                {recipe.recipe_id}
                             </td>
-                            <td className='p-3'>
+                            <td>
                                 {recipe.title}
                             </td>
+                          {/* 
                             <td className='p-3'>
                                 {recipe.description}
                             </td>
-                            <td  className='p-3'>
+                            */}
+                            <td >
                                 {recipe.created_at}
                             </td>
-                            <td className='p-3'>
-                                <Link to={`/recipes/${userId}/${recipe.id}/edit`} state={{ recipe: recipe }}><BsPencilSquare size={28}  /></Link>
+                            <td>
+                                <Link to={`/recipes/${user_id}/${recipe.recipe_id}/edit`} state={{ recipe: recipe }}><BsPencilSquare size={28}  /></Link>
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-        </div>
+
     );
 }

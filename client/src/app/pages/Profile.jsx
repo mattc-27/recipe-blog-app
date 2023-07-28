@@ -6,7 +6,7 @@ import '../../main.css';
 
 export default function Profile() {
 
-    const { userId } = useParams();
+    const { user_id } = useParams();
 
     const { userProfile, setUserProfile } = useContext(UserContext);
 
@@ -24,7 +24,7 @@ export default function Profile() {
         const userProfile = JSON.parse(localStorage.getItem('userDetails'))
         if (Object.keys(userProfile).length === 0) {
             console.log('Resetting user profile data')
-            getUser(userId)
+            getUser(user_id)
                 .then((data) => setUserProfile(data));
         }
     }, [])
@@ -33,11 +33,12 @@ export default function Profile() {
     /// Update user profile
     const updateProfile = async (e) => {
         e.preventDefault();
-        const id = userId;
+        //const user_id = user_id;
         try {
             const body = { username: username, location: location }
-            await updateUser(body, id)
-            window.location = `/dashboard/${id}`;
+            await updateUser(body, user_id)
+            window.location = `/dashboard/${user_id}`;
+            //navigate(`/dashboard/${user_id}`);
         } catch (error) {
             console.log(error);
         }
@@ -45,37 +46,40 @@ export default function Profile() {
 
 
     return (
-        <div className='formContainer' >
-            <form className='formStyle-1' id='proileForm'>
-                <div className='formTitle'>
+        <div className='mainContainer-b' id='profileContainer'>
+            <div className='formContainer-b' id='editFormContainer' >
+                <div className='pageTitle' id='editProfileTitle'>
                     <h2>Update Profile</h2>
                 </div>
-                <div className='formGroup-2'>
-                    <label>Username</label>
-                    <input
-                        type='text'
-                        value={username || ''}
-                        onChange={e => setUsername(e.target.value)}
+                <form className='formStyle-1' id='updateForm'>
 
-                    />
-                </div>
-                <div className='formGroup-2'>
-                    <label>Location</label>
-                    <input
-                        type="text"
-                        value={location || ''}
-                        onChange={e => setLocation(e.target.value)}
+                    <div className='formGroup-1'>
+                        <label>Username</label>
+                        <input
+                            type='text'
+                            value={username || ''}
+                            onChange={e => setUsername(e.target.value)}
 
-                    />
-                </div>
-                <div className='formGroup-2' id='formGroup-btn'>
-                    <button
-                        id="saveButton"
-                        onClick={e => updateProfile(e)}>
-                        Save
-                    </button>
-                </div>
-            </form>
+                        />
+                    </div>
+                    <div className='formGroup-1'>
+                        <label>Location</label>
+                        <input
+                            type="text"
+                            value={location || ''}
+                            onChange={e => setLocation(e.target.value)}
+
+                        />
+                    </div>
+                    <div className='formGroup-1' id='formGroup-btn'>
+                        <button
+                            id="saveButton"
+                            onClick={e => updateProfile(e)}>
+                            Save
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
 
     );
