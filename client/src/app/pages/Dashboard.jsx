@@ -6,8 +6,8 @@ import { logoutUser, getUser } from '../../../userServices';
 import '../../main.css';
 
 export default function Dashboard() {
-
-    const { userId } = useParams();
+    const navigate = useNavigate();
+    const { user_id } = useParams();
     const { userProfile, getUserDetails, setUserProfile } = useContext(UserContext);
 
     /// /// Initial login 
@@ -22,27 +22,38 @@ export default function Dashboard() {
         console.log(currentUser);
         if (Object.keys(currentUser).length === 0) {
             console.log('Resetting user profile data')
-            getUser(userId)
+            getUser(user_id)
                 .then((data) => setUserProfile(data));
         }
     }, [])
 
     return (
+        <div className='mainContainer-b' id='dashboard'>
 
-        <div className='appContainer'>
-            <div className='dashboardTitle'>
-                <h1>Welcome, {userProfile.username}</h1>
-            </div>
-            <div className='appContent' id='dashboard' >
-                <div className='dashboardCard'>
+            <div className='dashboardPage'>
+                <div className='dashboardTitle'>
+                    <h1>Let's get baked, {userProfile.username}</h1>
+                </div>
+                <div className='dashboardContent' >
+                    <div className='dashboardCard'>
+                        <p>To get started, click the button below. Or select Your Recipes from the navigation to view your posts and/or add a new recipe.</p>
+                        <p>Select the Account option to update your profile.</p>
+                        
+                    </div>
+                    <div className='dashboardCard'>
+                    <button id="getStartedButton" onClick={() => navigate(`/recipes/${user_id}/all`)}>Get Started</button>
+                    </div>
+                    {/*
+               
                     <h2>Profile</h2>
-                    <Link to={`/profile/${userId}`}>Profile</Link>
-                </div>
                 <div className='dashboardCard'>
-                    <h2>My Recipes</h2>
-                    <Link to={`/recipes/${userId}/all`}>Recipes</Link>
+                    <h2>Add, Modify Recipes</h2>
+                                        <Link className='uiLink' to={`/profile/${user_id}`}>Profile</Link>
+                    <Link className='uiLink' to={`/recipes/${user_id}/all`}>Recipes</Link>
+    </div>*/}
                 </div>
             </div>
+
         </div>
     );
 }

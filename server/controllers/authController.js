@@ -19,7 +19,7 @@ const userAuth = (req, res, next) => {
 
 const verifyUser = async (req, res) => {
     try {
-      const { id } = req.params;
+      const { user_id } = req.params;
       return res.json({ user: req.user, isValid: true });
     } catch (error) {
       console.error(error.message);

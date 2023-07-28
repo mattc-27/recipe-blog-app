@@ -1,0 +1,437 @@
+/* || NAVIGATION  */
+/** home nav *
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 20%;
+    }
+
+    .homeNavBar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }**/
+
+    /*
+    .navLoginLink {
+
+    }
+
+    .homeNavLink {
+        color: #e3e4ef;
+        font-size: 1.2em;
+        font-weight: 500;
+        margin: 1%;
+        padding: 1%;
+        width: 5em;
+    }
+
+  .registerLink {
+        margin: 1%;
+        padding: 1%;
+        font-size: 1.2em;
+        width: 5em;
+        font-weight: 500;
+        text-decoration: none;
+        text-align: center;
+        color: #313131;
+        color: #e3e4ef;
+        border: 0.1em solid #45825a;
+    }*/
+
+    /*
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 10em;
+    padding: 0.4em;
+    background: #102646;
+    color: #e3e4ef;
+}
+
+.homeNavTitle {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+    justify-content: flex-end;
+}
+
+.homeNavTitle h1 {
+    font-size: 3em;
+}
+
+.homeNavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.homeNavBarMobile {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+.navLoginLink {
+    color: #e3e4ef;
+    font-size: 1.2em;
+    padding: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.registerLink {
+    padding: 1%;
+    font-size: 1.2em;
+    width: 16%;
+    align-self: flex-end;
+    font-weight: 400;
+    text-decoration: none;
+    color: #313131;
+    color: #e3e4ef;
+    background: #04AA6D;
+    border-radius: 60px;
+    border: none;
+}
+
+.homeNavLink {
+    color: #e3e4ef;
+    font-size: 1.2em;
+    margin: 2% 1%;
+    padding: 1%;
+    width: 5em;
+    font-weight: 400;
+    text-decoration: none;
+    border: 0.05em solid #fff;
+}
+***/
+/*
+            {visible ?
+                <header>
+
+                    <div className="homeNavTitle">
+                    <Link className='titleHomeLink' to={`/`}><h1>Recipe Blog</h1></Link>
+                    <Link className='navLoginLink' to={`/login`}>Login</Link>
+                        {/* <Link className='homeNavLink' to={`/`}>Home</Link> 
+                    </div>
+
+                    <nav className='homeNavBarMobile'>
+                        {visible ? null : <Link className='homeNavLink' to={`/`}>Home</Link>}
+                       
+                        <Link className='registerLink' to={`/register`}>Register</Link>
+                      
+                    </nav>
+
+                </header>
+
+
+                : <header class='headerA'>
+
+                    <div className="homeNavTitle">
+                   
+                    <Link className='navLoginLink' to={`/login`}>Login</Link>
+                    </div>
+
+                   <nav className='homeNavBar'>
+                   <Link className='titleHomeLink' to={`/`}><h1>Recipe Blog</h1></Link>
+                   <Link className='registerLink' to={`/register`}>Register</Link>
+                        {/* <Link className='homeNavLink' to={`/`}>Home</Link>
+                     
+                       
+                         <button
+                     className='btnStyle-1'
+                     id='registerBtn'
+
+                 ><a href='/register'>Register</a>
+                </button>
+              
+                    </nav>  
+
+                </header>
+
+
+
+            } */
+/*** Mobile *****/
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: #102646;
+    color: #e3e4ef;
+    height: 10%;
+}
+
+.mobileNavTitle {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em;
+}
+
+.mobileNavTitle h1 {
+    font-size: 3em;
+}
+
+.mobileNavContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 0.4em;
+}
+
+#showNav {
+    width: auto;
+    height: auto;
+    background: none;
+    border-radius: 0.3750em;
+    font-size: 1em;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.mobileNavBar {
+    position: absolute;
+    background: #fff;
+    width: 30%;
+    padding: 2%;
+    margin-top: 10%;
+    background-color: rgba(16, 38, 70, 0.691);
+    backdrop-filter: blur(5px);
+}
+
+.mobileLink {
+    display: block;
+    color: #e3e4ef;
+    padding: 1em;
+    text-decoration: none;
+    margin: 0.2em;
+    width: 100%;
+}
+
+.mobileLink:hover {
+    background-color: #204884;
+    color: white;
+}
+
+/* Active/current link */
+.mainNavLink.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Links on mouse-over */
+.mainNavLink:hover:not(.active) {
+    background-color: #204884;
+    color: white;
+}
+
+/* Logout buttons */
+#mobileLogoutBtn {
+    height: 2.5em;
+    width: 7em;
+    margin: 0.5em;
+    border-radius: 0.4em;
+    font-size: 87.5%;
+    background: none;
+    background: #d43a3a;
+}
+
+#mainLogoutBtn {
+    height: 2.5em;
+    width: 7em;
+    margin: 0.5em;
+    border-radius: 0.4em;
+    font-size: 87.5%;
+    background: none;
+    background: #d43a3a;
+}
+
+/*** home nav ******/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 10em;
+    padding: 0.4em;
+    background: #102646;
+    color: #e3e4ef;
+}
+
+.homeNavTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.homeNavTitle h1 {
+    font-size: 3em;
+}
+
+.homeNavBar {
+    display: flex;
+    flex-direction: column;
+}
+
+.homeNavBarMobile {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+
+.homeNavLink {
+    color: #e3e4ef;
+    font-size: 1.2em;
+    margin: 2% 1%;
+    padding: 1%;
+    width: 5em;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    border: 0.05em solid #fff;
+}
+
+.registerLink {
+    margin: 1%;
+    padding: 1%;
+    font-size: 1.2em;
+    width: 5em;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+    color: #313131;
+    color: #e3e4ef;
+    border: 0.05em solid #fff;
+}
+
+@media only screen and (min-width: 700px) {
+    header {
+        height: 6em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+
+    .mainNav {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30%;
+        height: 100%;
+        background: #102646;
+       
+    }
+
+    .mainNavTitle {
+        display: flex;
+        width: 95%;
+        color: #e3e4ef;
+    }
+
+    .mainNavTitle h1 {
+        font-size: 2.5em;
+        padding: 2% 0 0 2%;
+    }
+
+    .mainNavBar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        margin: 2% 0;
+        padding: 1%;
+    }
+
+    .mainNavLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.1em;
+        font-weight: 500;
+        width: 95%;
+        margin: 1%;
+        padding: 0.1em;
+    }
+
+    .mainNavLink {
+        display: block;
+        color: #e3e4ef;
+        padding: 1em;
+        text-decoration: none;
+        margin: 0.2em;
+        width: 100%;
+    }
+
+    /** home nav ****/
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 7em;
+    }
+
+    .homeNavBar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        width: 40%;
+    }
+
+    .homeNavLink {
+        color: #e3e4ef;
+        font-size: 1.2em;
+        font-weight: 500;
+        margin: 1%;
+        padding: 1%;
+        width: 5em;
+    }
+
+    .registerLink {
+        margin: 1%;
+        padding: 1%;
+        font-size: 1.2em;
+        width: 5em;
+        font-weight: 500;
+        text-decoration: none;
+        text-align: center;
+        color: #313131;
+        color: #e3e4ef;
+        border: 0.1em solid #45825a;
+    }
+}
+
+
+@media only screen and (min-width: 1100px) {
+   header{
+
+   } .mainNav {
+        width: 25%;
+    }
+
+    .mainNavTitle h1 {
+        font-size: 3em;
+    }
+}

@@ -11,7 +11,7 @@ const userLogin = async (req, res) => {
 
         if (findUser.rows.length > 0) {
             const hashedPassword = findUser.rows[0].password;
-            const id = findUser.rows[0].id;
+            const user_id = findUser.rows[0].user_id;
             bcrypt.compare(password, hashedPassword, function (err, isValid) {
 
                 if (err) {
@@ -27,7 +27,7 @@ const userLogin = async (req, res) => {
                         maxAge: 36000000,
                         path: '/',
                     }).status(200).json(
-                        { isValid: true, username, id, message: 'Logged in successfully!' }
+                        { isValid: true, username, user_id, message: 'Logged in successfully!' }
                     )
 
 

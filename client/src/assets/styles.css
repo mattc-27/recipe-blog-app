@@ -1,0 +1,344 @@
+/* || Header and Main Navigation */
+header {
+    width: auto;
+    font-family: 'Lato', sans-serif;
+    background: #102646;
+}
+
+.headerContent,
+.appHeaderContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    padding: 10px;
+    flex-grow: 1;
+    color: #e3e4ef
+}
+
+
+
+
+.mainTitleHeader,
+.appTitleHeader {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.mainTitleHeader h1,
+.appTitleHeader h1 {
+    align-self: center;
+    text-align: center;
+    font-size: 48px;
+    color: #e3e4ef
+}
+
+.navBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+
+}
+
+.layoutLink {
+    margin: 4px 2px;
+    color: #313131;
+    color: #e3e4ef
+}
+
+.recipeCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0.5px solid #070707;
+    background-color: #fafbfb;
+    border: 0.5px solid #010101;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 90%;
+    margin: 2px;
+    padding: 2px 3px;
+}
+
+.cardText {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 2px;
+    margin: 2px 5px;
+}
+
+.cardText h3 {
+    font-size: 48px;
+    padding: 2px 3px;
+}
+
+.cardText p {
+    font-size: 32px;
+    padding: 2px 3px;
+}
+
+.cardButtons {
+    display: flex;
+    flex-direction: row;
+    min-width: 0;
+    padding: 2px;
+    color: #313131;
+}
+.listSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5px 3px;
+}
+
+#viewLink {
+    font-size: 24px;
+    padding: 2px 3px;
+    color: #2a3c75;
+}
+.recipeContainer {
+    flex-basis: 500px;
+    margin-bottom: 2%;
+}
+@media only screen and (min-width: 780px) {
+
+    .headerContent,
+    .appHeaderContent {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .navBar {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: baseline;
+        width: 50%;
+    }
+
+    .layoutLink {
+        margin: 3px 7px;
+    }
+
+
+
+
+}
+
+
+
+
+
+
+/*** */
+
+    /*.userRecipesContent {
+        display: flex;
+        margin: 10px;
+        border-left: 2px solid rgba(0, 0, 0, 0.3);
+        align-items: center;
+        margin-top: 1%;
+        background-color: #eaeaea;
+        width: 100%;
+    }*/
+    /*
+.userRecipesTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
+    padding: 5px;
+    color: #25274d;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 1%;
+}
+*/
+@media only screen and (min-width: 780px) {
+    /** Edit Profile, Recipe *******/
+
+
+}
+
+/* 
+.addModalContainer {
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+#addRecipeForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: none;
+    margin: 0px auto;
+    padding: 5px;
+}
+#addFormGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 90%;
+    padding: 2px 3px;
+}
+
+#addFormGroup label {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 5px 0px;
+    text-align: left;
+}
+
+.addFormGroup input {
+    font-size: 18px;
+    padding: 10px;
+    height: 50px;
+    border: 0.5px solid #d0cfcf;
+    background-color: #fff;
+} 
+*/
+
+/* 
+    .pageTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 40%;
+    }
+        #userRecipesTitle {
+        align-self: flex-start;
+        margin: 5px;
+        border-bottom: 1px solid #000;
+    }
+      #editProfileTitle {
+        align-self: flex-start;
+        margin: 5px;
+        border-bottom: 1px solid #000;
+    }
+   #modifyRecipeTitle h2,
+    #editProfileTitle h2 {
+        font-size: 38px;
+    }
+
+ #editRecipeForm  {
+        border: none;
+        margin: 5px;
+        flex-grow: 1;
+        border-radius: 0;
+    }
+     */
+
+/************
+/* Form Style 1 [Login, Reg **********
+.formStyle-a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 500px;
+    width: 80%;
+    flex-basis: 500px;
+    gap: 5px;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background-color: #fafbfb;
+}
+
+
+
+
+/* Form Style 2 [Profile, Edit Recipe ] **********
+.formGroup-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 90%;
+    padding: 2px 3px;
+}
+
+
+
+
+
+
+
+
+
+/* || BLOG RECIPE LIST PAGE */
+#recipePageTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.recipePageHeader h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+#addNewRecipe {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#recipePageContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+#recipePage {
+    display: flex;
+    flex-direction: column;
+}
+
+#recipeList {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+
+#userProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 50px 0;
+    padding: 5px 0;
+}
+***********/

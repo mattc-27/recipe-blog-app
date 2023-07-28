@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { UserContext } from '../../../userContext';
 import { getUser } from '../../../userServices';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import '../../main.css';
 
@@ -31,57 +33,75 @@ export default function Login() {
                 })
             const data = await response.json();
             console.log(data);
-            if (data.isValid) {
-                await getUser(data.id)
-                setUserProfile(data.id);
-                navigate(`/dashboard/${data.id}`);
+            if (data.isValid && response.ok) {
+                toast.success('Login successful!');
+                await getUser(data.user_id)
+                setUserProfile(data.user_id);
+                setTimeout(() => {
+                    navigate(`/dashboard/${data.user_id}`); // Redirect to homepage or desired page after a delay
+                }, 2000);
+            } else {
+                toast.error('Login failed. Please try again.')
             }
-        } catch (err) {
-            console.error(err.message);
+        } catch (error) {
+            console.error(error.message);
+            toast.error('An error occurred. Please try again.')
         }
     };
 
 
     return (
-
-        <div className='formContainer' >
-            <form className='formStyle-1' id='loginForm'>
-                <div className='formTitle'>
-                    <h2>Login</h2>
-                </div>
-                <div className='formGroup-1'>
-                    {/*  <label>Username</label>*/}
-                    <input
-                        type='text'
-                        placeholder="Enter username"
-                        name='username'
-                        value={inputs.username}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className='formGroup-1'>
-                    {/* <label>Password</label>*/}
-                    <input
-                        type='password'
-                        placeholder="Password"
-                        name='password'
-                        value={inputs.password}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className='formGroup-1'>
-                    <button
-                        className='btnStyle-1'
-                        id="loginButton"
-                        onClick={onSubmitForm}
-                    >
-                        Login
-                    </button>
-                    <a href='/register'>Create an account</a>
-                </div>
-            </form>
+        <div className='mainContainer-a'>
+            <div className='formContainer-a' >
+                <form className='formStyle-a' id='loginForm'>
+                    <div className='formTitle-a'>
+                        <h2>Sign In</h2>
+                    </div>
+                    <div className='formGroup-a'>
+                        {/*  <label>Username</label>*/}
+                        <input
+                            type='text'
+                            placeholder="Enter username"
+                            name='username'
+                            value={inputs.username}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className='formGroup-a'>
+                        {/* <label>Password</label>*/}
+                        <input
+                            type='password'
+                            placeholder="Password"
+                            name='password'
+                            value={inputs.password}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className='formGroup-a'>
+                        <button
+                            className='btnStyle-a'
+                            id="loginButton"
+                            onClick={onSubmitForm}
+                        >
+                            Login
+                        </button>
+                        <ToastContainer
+                            position="top-right"
+                            autoClose={5000}
+                            hideProgressBar
+                            newestOnTop={false}
+                            closeOnClick={false}
+                            rtl={false}
+                            pauseOnFocusLoss={false}
+                            draggable={false}
+                            pauseOnHover
+                            theme="light"
+                        />
+                        <a href='/register'>Create an account</a>
+                    </div>
+                </form>
+            </div>
         </div>
-
     );
 }
 

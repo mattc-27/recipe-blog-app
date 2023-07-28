@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 
-import { listRecipes } from '../../recipeServices';
-import RecipeTable from './RecipeTable';
-import '../main.css';
 
-export default function Home() {
+import RecipeTable from '../../blog/RecipeTable';
+import '../../main.css';
+
+export default function Blog() {
 
     const [recipes, setRecipes] = useState([]);
     const [randomRecipe, setRandomRecipe] = useState({});
@@ -35,9 +35,8 @@ export default function Home() {
     return (
 
 
-        <div className='homeContainer'>
+        <div className='mainContainer-b'>
             <RecipeTable recipes={recipes} />
         </div>
     );
 }
-

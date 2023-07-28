@@ -5,7 +5,7 @@ const blogController = require('../controllers/blogController');
 router.get(`/`, blogController.listRecipes);
 
 
-router.get(`/recipe/:id`, blogController.fetchBlogPost);
+router.get(`/recipe/:recipe_id`, blogController.fetchBlogPost);
 
 
 

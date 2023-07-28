@@ -1,91 +1,454 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
 
 * {
-    background: #fff;
+    margin: 0;
+    padding: 0;
 }
 
-/*** Mobile
-************/
+header {
+    height: auto;
+    width: 100%;
+}
 
-/* Forms **********/
-.formContainer {
+a:hover {
+    color: unset;
+}
+
+/** home container **/
+.homeContainer {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 50px 0;
-    padding: 5px 0;
+    height: 100vh;
+    background: #c8c7c7;
 }
 
-/* Form 1 **********/
+/** login/reg container **/
+.mainContainer-a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #e1e2e5;
+    height: 100vh;
+    background: #c8c7c7;
+}
+
+/** main app container **/
+.mainContainer-b {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background: #c8c7c7;
+}
+
+
+
+
+/* || NAVIGATION  */
+
+
+
+/*** Mobile *****/
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: #102646;
+    color: #e3e4ef;
+    height: 10%;
+}
+
+.mobileNavTitle {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5em;
+}
+
+.mobileNavTitle h1 {
+    font-size: 3em;
+}
+
+.mobileNavContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 0.4em;
+}
+
+#showNav {
+    width: auto;
+    height: auto;
+    background: none;
+    border-radius: 0.3750em;
+    font-size: 1em;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.mobileNavBar {
+    position: absolute;
+    background: #fff;
+    width: 30%;
+    padding: 2%;
+    margin-top: 10%;
+    background-color: rgba(16, 38, 70, 0.691);
+    backdrop-filter: blur(5px);
+}
+
+.mobileLink {
+    display: block;
+    color: #e3e4ef;
+    padding: 1em;
+    text-decoration: none;
+    margin: 0.2em;
+    width: 100%;
+}
+
+.mobileLink:hover {
+    background-color: #204884;
+    color: white;
+}
+
+/* Active/current link */
+.mainNavLink.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Links on mouse-over */
+.mainNavLink:hover:not(.active) {
+    background-color: #204884;
+    color: white;
+}
+
+/* Logout buttons */
+#mobileLogoutBtn {
+    height: 2.5em;
+    width: 7em;
+    margin: 0.5em;
+    border-radius: 0.4em;
+    font-size: 87.5%;
+    background: none;
+    background: #d43a3a;
+}
+
+#mainLogoutBtn {
+    height: 2.5em;
+    width: 7em;
+    margin: 0.5em;
+    border-radius: 0.4em;
+    font-size: 87.5%;
+    background: none;
+    background: #d43a3a;
+}
+
+/*** home nav *** */
+
+
+.navLoginLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 1%;
+    width: 100%;
+    color: #e3e4ef;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+.navLoginLink:hover {
+    color: #cdd0f1;
+}
+
+
+
+.homeNav {
+    display: flex;
+    flex-direction: row;
+    flex-direction: column;
+    border: 1px solid #fff;
+}
+
+
+.homeNavBarTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    background-color: #001c45;
+}
+
+.homeNavBarTop h1 {
+    font-size: 5em;
+    height: 100%;
+}
+
+.homeNavBarBottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.navBarTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding: 0.5%;
+    color: #e3e4ef;
+    text-decoration: none;
+}
+
+.navBarTitle h1 {
+    font-size: 4em;
+}
+
+.navBarTitle h1:hover,
+.navLoginLink:hover {
+    color: #04AA6D;
+}
+
+.registerLink {
+    align-self: center;
+    width: 20%;
+    padding: 1%;
+    margin: 1%;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #e3e4ef;
+    background: #04AA6D;
+    border-radius: 60px;
+    border: none;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 700px) {
+
+
+
+    .homeNavBarTop {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+
+    }
+
+    .homeNavBarTop h1 {
+        font-size: 5em;
+        height: 100%;
+    }
+
+    .homeNavBarBottom {
+        display: flex;
+        flex-direction: column;
+        flex-direction: row;
+
+    }
+
+
+    .navBarTitle {
+        justify-content: flex-start;
+        flex-grow: 1;
+        flex-wrap: wrap;
+    }
+
+
+
+
+
+    .registerLink {
+        /* width: 16%;
+        flex-basis: 8em;*/
+
+        align-self: flex-end;
+    }
+
+}
+
+
+/* || DASHBOARD, USER PAGES */
+.dashboardPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10%;
+    height: auto;
+    width: 90%;
+    background-color: #f3f3f3;
+    font-family: 'Lato', sans-serif;
+}
+
+.userRecipesPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10%;
+    width: 90%;
+    font-family: 'Lato', sans-serif;
+}
+
+.dashboardTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1%;
+    margin: 2%;
+    color: #25274d;
+}
+
+.userRecipesTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+    width: 90%;
+    padding: 2%;
+    margin: 1%;
+    background-color: #f3f3f3;
+    color: #25274d;
+}
+
+.dashboardTitle h1 {
+    font-size: 2.25em;
+    font-weight: 500;
+}
+
+.userRecipesTitle h2 {
+    font-size: 2.25em;
+    font-weight: 500;
+}
+
+
+.dashboardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1%;
+    margin: 1%;
+    flex-grow: 1;
+    border-left: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.userRecipesContent {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 1%;
+    margin: 1%;
+    color: #25274d;
+    margin-bottom: 1%;
+    background-color: #f3f3f3;
+}
+
+.dashboardCard {
+    margin: 1%;
+    padding: 1%;
+}
+
+.uiLink {
+    color: #25274d;
+}
+
+#addRecipeBtn {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    background: #374c90;
+    cursor: pointer;
+    align-self: center;
+}
+
+#userRecipesTable table {
+    overflow-x: auto;
+    overflow: auto;
+    display: flex;
+}
+
+#userRecipeTable th,
+#userRecipeTable tr td {
+    padding: 5px;
+}
+
+#userRecipeTable th {
+    border-bottom: 2px solid #373636;
+}
+
+
+/* || EDIT PAGES - PROFILE, RECIPE  */
+.pageTitle {
+    align-self: center;
+    margin: 5px;
+    border-bottom: 1px solid #000;
+    flex-grow: 1;
+}
+
+.pageTitle h2 {
+    font-size: 38px;
+}
+
+.formContainer-b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 80%;
+    margin-top: 2%;
+    padding: 20px 5px;
+    font-family: 'Lato', sans-serif;
+    background: #c8c7c7;
+}
+
 .formStyle-1 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    align-self: center;
     height: 500px;
-    width: 80%;
-    gap: 5px;
-    border-radius: 8px;
-    padding: 15px;
-    border: 2px solid rgba(0, 0, 0, 0.3);
+    width: 90%;
+    flex-grow: 1;
+    border: none;
+    margin: 5px;
+    border-radius: 0;
 }
 
 .formGroup-1 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.formGroup-1 input {
-    font-size: 18px;
-    padding: 10px;
-    height: 50px;
-    width: 70%;
-    background-color: rgb(241, 241, 241);
-    border: 0.5px solid #d0cfcf;
-}
-
-.formTitle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.formTitle h2 {
-    font-size: 38px;
-    margin: 5px 0;
-}
-
-.formGroup-1 label {
-    font-size: 26px;
-    font-weight: 600;
-    margin: 5px 0px;
-    width: 450px;
-    text-align: left;
-}
-
-/* Form 2 [Profile, ] **********/
-.formGroup-2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     text-align: left;
-    width: 80%;
-    flex-wrap: wrap;
+    width: 90%;
     padding: 2px 3px;
 }
 
-.formGroup-2 label {
-    align-self: center;
+.formGroup-1 label {
+    align-self: flex-start;
+    text-align: left;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
+    margin: 0 5px;
 }
 
-.formGroup-2 input {
+.formGroup-1 input {
     height: 50px;
     width: 70%;
     padding: 8px;
@@ -94,414 +457,284 @@
     font-size: 18px;
 }
 
-#formGroup-btn {
-    justify-content: flex-end;
-}
-
-/*************
-\\ Blog
-**************/
-.homeContainer {
-    width: 100%;
-    height: auto;
-    margin: 0px auto;
-    padding: 10px 5px;
-}
-
-/** Layout, header - blog
-*****************/
-.headerContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0px auto;
-    padding: 10px;
-    flex-grow: 1;
-}
-
-.mainTitleHeader {
+#editRecipeTitle {
     display: flex;
     flex-direction: row;
-    padding: 5px;
-}
-
-.mainTitleHeader h1 {
-    font-size: 48px;
-}
-
-
-/** Nav
-*****************/
-.navBar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 24px;
-}
-
-.layoutLink {
-    margin: 4px 2px;
-    color: #313131;
-}
-
-/** Login, Reg
-*****************/
-#loginForm,
-#regForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 500px;
-    width: 80%;
-    gap: 5px;
-    padding: 15px;
-    border: 2px solid rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-}
-
-#regForm a,
-#loginForm a {
-    margin: 5px 0;
-    font-size: 24px;
-    color: #070707;
-    background-color: #fff;
-}
-
-/** Recipe list, blog
-*****************/
-.recipeContainer {
-    border: 0.5px solid #070707;
-    margin-bottom: 2%;
-}
-
-.recipeCard {
-    height: 150px;
-}
-
-.cardContent {
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
-.cardText {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    padding: 2px;
-    margin: 2px 5px;
-    overflow-wrap: break-word;
-}
-
-.cardText h3 {
-    font-size: 38px;
-}
-
-.cardText p {
-    font-size: 20px;
-    margin: 1px 3px;
-}
-
-.cardButtons {
-    display: flex;
-    flex-direction: row;
-    min-width: 0;
-    padding: 2px;
-    color: #313131;
+#editFormContainer {
+    background-color: #eaeaea;
 }
 
 
 
 
-/*************
-\\ App
-**************/
-.appContainer {
-    margin: 0;
-    padding: 0;
+/* || BLOG RECIPE LIST PAGE  */
+#homeRecipeTable {
+    background: #f3f3f3;
+    margin-top: 5%;
+    font-family: 'Lato', sans-serif;
+    overflow-x: auto;
+    overflow: auto;
+    width: 98%;
 }
 
-.appContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
+#homeRecipeTable th,
+#homeRecipeTable tr td {
+    padding: 1%;
+
 }
 
-/** App header
-*****************/
-.appHeaderContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0px auto;
-    padding: 10px;
-    flex-grow: 1;
+#homeRecipeTable th {
+    border-bottom: 2px solid #373636;
 }
 
-.appHeader {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 5px;
-}
 
-.appHeader h1 {
-    align-self: center;
-    text-align: center;
-    font-size: 48px;
-}
-
-/** Page Styles
-*****************/
-#dbTitle {
-    justify-content: flex-end;
-}
-
-.dashboardTitle {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-}
-
-.dashboardTitle h1 {
-    font-family: 'Playfair Display', serif;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 42px;
-    color: #2a3c75;
-    font-weight: 600;
-}
-
-/*** Dashboard ********/
-#dashboard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-
-#dashboard p {
-    font-size: 28px;
-    font-weight: 500;
-}
-
-.dashboardCard {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    border: 2px solid rgba(0, 0, 0, 0.3);
-    gap: 5px;
-    border-radius: 8px;
-    padding: 15px;
-    margin: 5px;
-    height: 200px;
-    width: 300px;
-}
-
-/*** Profile ********/
-#userProfile {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 50px 0;
-    padding: 5px 0;
-}
 
 /** 
-Recipe Pages
-*******************/
-#recipePageTitle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    margin-left: 5px;
-}
+*/
+@media only screen and (min-width: 700px) {
 
-.recipePageHeader h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    font-weight: 600;
-}
+    .mainNav {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30%;
+        height: 100%;
+        background: #102646;
 
-#addNewRecipe {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
+    }
 
-#recipePageContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-}
+    .mainContainer-b {
+        margin-left: 30%;
+        justify-content: center;
+        align-items: center;
+    }
 
-#recipePage {
-    display: flex;
-    flex-direction: column;
-}
-
-#recipeList {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-/** Recipe Table
-*****************/
-#userRecipeTable {
-    width: 90%;
-    justify-content: center;
-}
-
-.tableHeader {
-    border-bottom: 0.5px solid #313131;
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: 16px;
-}
-
-#userRecipeTable tbody td {
-    font-size: 14px;
-    text-align: center;
-    margin: 0px auto;
-}
-
-
-
-
-/****
-\\ Desktop
-**********/
-
-@media only screen and (min-width: 780px) {
-/*** Header
-**************/
-    .headerContent {
+    /** **/
+    /*
+    header {
+        height: 6em;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
         align-items: flex-end;
-    }
+    }*/
 
-/*** Nav
-**************/
-    .navBar {
-        flex-direction: row;
-        justify-content: space-evenly;
-        width: 50%;
-    }
 
-    .layoutLink {
-        margin: 3px 7px;
-        color: #313131;
-    }
 
-/*** Login, reg
-**************/
-    #loginForm,
-    #regForm {
-        height: 500px;
-        width: 40%;
+    .mainNavTitle {
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+        width: 95%;
+        color: #e3e4ef;
     }
 
-/*** Blog recipes
-**************/
-    .listSection {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 5px 3px;
+    .mainNavTitle h1 {
+        font-size: 2.5em;
+        padding: 2% 0 0 2%;
     }
 
-    .recipeContainer {
-        border: 0.5px solid #070707;
-        flex: 0 32%;
-        margin-bottom: 2%;
-        width: 30%;
-        flex-wrap: wrap;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .recipeCard {
-        height: 150px;
-    }
-
-    .cardContent {
+    .mainNavBar {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-    }
-
-/*** App Pages
-**************/
-    .appHeaderContent {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .appHeader {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         width: 100%;
+        margin: 2% 0;
+        padding: 1%;
+    }
+
+    .mainNavLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.1em;
+        font-weight: 500;
+        width: 95%;
+        margin: 1%;
+        padding: 0.1em;
+    }
+
+    .mainNavLink {
+        display: block;
+        color: #e3e4ef;
+        padding: 1em;
+        text-decoration: none;
+        margin: 0.2em;
+        width: 100%;
+    }
+
+
+
+    /* || DASHBOARD, USER PAGES */
+    .dashboardPage {
+        width: 80%;
+        margin-top: 0;
+    }
+
+    .dashboardTitle h1 {
+        font-size: 2.2em;
+        font-weight: 500;
+    }
+
+    #userRecipes {
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    #addRecipeBtn {
+        align-self: flex-start;
+        margin: 5px 0;
+    }
+
+    table {
+        width: 98%;
+    }
+
+    #userRecipeTable th,
+    #userRecipeTable tr td {
         padding: 5px;
     }
 
-    #dashboard {
+    /* || EDIT PROFILE, RECIPE **/
+    .formContainer-b {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        width: 80%;
+        margin-top: 20px;
+        padding: 10px;
     }
 
-    #userRecipeTable {
-        width: 90%;
+    #modifyRecipeContainer,
+    #profileContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
         justify-content: center;
     }
 
-/*** App
-**************/
-    .tableHeader {
-        border-bottom: 0.5px solid #313131;
-        margin-bottom: 10px;
-        text-align: center;
-        font-size: 18px;
-    }
-    #userRecipeTable tbody td {
-        font-size: 18px;
-        text-align: center;
-        margin: 0px auto;
+    #editProfileTitle,
+    #editRecipeTitle {
+        align-self: flex-start;
+        margin: 5px;
+        border-bottom: 1px solid #000;
+        color: #25274d;
     }
 
+    #editRecipeTitle {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    #editFormContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: #eaeaea;
+    }
+
+    #updateForm {
+        width: 80%;
+        height: auto;
+        align-self: flex-end;
+    }
+
+    .formGroup-1 {
+        display: flex;
+        flex-direction: row;
+        margin: 5px 0;
+        padding: 5px 0;
+    }
+
+    #formGroup-btn {
+        justify-content: flex-start;
+    }
 
 }
 
 
 
+/** 
+*/
+@media only screen and (min-width: 900px) {
 
-/** Buttons
-*****************/
+    .mainNav {
+        width: 27%;
+    }
+
+    .mainContainer-b {
+        margin-left: 27%;
+    }
+
+}
+
+
+
+/** 
+*/
+@media only screen and (min-width: 1100px) {
+    .mainNav {
+        width: 25%;
+
+    }
+
+    .mainNavTitle h1 {
+        font-size: 3em;
+    }
+
+    .mainContainer-b {
+        margin-left: 25%;
+    }
+
+    /* || DASHBOARD, USER PAGES */
+    .dashboardPage {
+        width: 90%;
+    }
+
+    .dashboardTitle h1 {
+        font-size: 3em;
+        font-weight: 500;
+    }
+
+    #userRecipes {
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+
+
+/** 
+*/
+@media only screen and (min-width: 1300px) {
+    .mainNav {
+        width: 20%;
+
+    }
+
+    .mainNavTitle h1 {
+        font-size: 3em;
+    }
+
+    .mainContainer-b {
+        margin-left: 20%;
+    }
+
+}
+
+
+
+/* || BUTTON STYLES  */
 button {
     height: 40px;
     width: 120px;
@@ -515,61 +748,53 @@ button {
     text-align: center;
 }
 
-.btnStyle-1 {
+.btnStyle-a {
     background: #195942;
     color: #fff;
     height: 40px;
     width: 120px;
 }
 
-
-/** Login, Logout Buttons *****/
 #loginButton {
     margin: 5px 0;
+    font-size: 18px;
+    height: 48px;
+    padding: 0;
+    width: 126px;
+    font-weight: 400;
 }
 
-#logoutButton {
-    width: 80px;
-    background: #921111;
+
+
+#getStartedButton {
+    height: 3em;
+    width: 9em;
+    background: none;
+    border-radius: 60px;
+    font-size: 1em;
+    text-align: center;
+    background: #04AA6D;
+    align-self: center;
 }
 
 #registerBtn {
     align-self: flex-start;
     height: 40px;
     width: 80px;
-    padding: 2px;
+    background: none;
     border-radius: 6px;
     font-size: 14px;
     text-align: center;
 }
 
 #registerBtn a {
-    background: #195942;
-    color: #fff;
+    font-size: 20px;
     font-weight: 400;
-    font-size: 18px;
+    color: #2a3c75;
+    color: #313131;
+    padding: 5px 7px;
     text-decoration: none;
-}
-
-
-/** Opens modal ***/
-#addRecipeBtn {
-    font-size: 24px;
-    text-decoration: underline;
-    width: 200px;
-    color: #1c5c32;
-    font-weight: 500;
-}
-
-#recipeSaveButton {
-    border: none;
-    font-size: 15px;
-    flex-basis: 150px;
-}
-
-#addRecipeBtn:hover {
-    font-size: 25px;
-    color: #246a43;
+    border: 1.5px solid #195942;
 }
 
 #saveButton {
@@ -578,50 +803,145 @@ button {
     margin: 5px 0;
 }
 
+#deleteButton {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    background: none;
+}
 
 /*** Add recipe modal
 ************************/
-.addModalContainer {
-    padding: 10px 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
+#addModalContainer {
+    width: 98%;
+    background-color: #fff;
 }
 
 #addRecipeForm {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 5px;
-    border-radius: 8px;
-    border: none;
-    box-shadow: none;
-    margin: 0px auto;
-    padding: 5px;
+    background-color: #fff;
 }
 
-#addFormGroup {
+#recipeSaveButton {
+    border: none;
+    font-size: 15px;
+    flex-basis: 150px;
+}
+
+.addRecipeButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+
+
+
+
+/* || LOGIN AND REGISTRATION PAGES AND FORMS  */
+.formContainer-a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10%;
+    padding: 5px 0;
+    font-family: 'Lato', sans-serif;
+    flex-wrap: wrap;
+
+}
+
+.formStyle-a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 90%;
+    background-color: #fafbfb;
+}
+
+.formTitle-a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* background-color: #fafbfb;*/
+}
+
+.formTitle-a h2 {
+    font-size: 38px;
+    margin: 5px 0;
+    /* background-color: #fafbfb;*/
+}
+
+.formGroup-a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: first baseline;
-
+    align-items: center;
+    width: 80%;
+    /* background-color: #fafbfb;*/
 }
 
-#addFormGroup label {
+.formStyle-a a {
     font-size: 20px;
-    font-weight: 500;
-    margin: 5px 0px;
-    text-align: left;
+    margin: 5px;
+    color: #070707;
+    /* background-color: #fafbfb;*/
+    text-align: center;
 }
 
-.addFormGroup input {
+#loginForm,
+#regForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    flex-basis: 500px;
+    flex-wrap: wrap;
+}
+
+#loginForm input,
+#regForm input {
     font-size: 18px;
     padding: 10px;
     height: 50px;
-    border: 0.5px solid #d0cfcf;
-    background-color: #fff;
+    margin: 2px;
+    width: 90%;
+    background-color: rgb(241, 241, 241);
+    background-color: #fafbfb;
+    border: 0.5px solid #010101;
+}
+
+
+@media only screen and (min-width: 700px) {
+
+    /* || LOGIN, REG FORMS **/
+    .formContainer-a {
+        margin-top: 5%;
+    }
+
+    .formStyle-a {
+        width: 60%;
+    }
+}
+
+/*** Large ************/
+@media only screen and (min-width: 1100px) {
+
+    /* || LOGIN, REG FORMS **/
+    .formContainer-a {
+        margin-top: 5%;
+    }
+
+    .formStyle-a {
+        width: 40%;
+    }
 }

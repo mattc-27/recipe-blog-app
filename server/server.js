@@ -41,9 +41,12 @@ app.use(`/api/auth`, authRoutes);
 app.use(`/api/recipes`, recipeRoutes);
 app.use(`/api/blog`, blogRoutes);
 
+/* 
+
 app.use((req, res, next) => {
     res.status(404).send("Sorry can't find that!")
-  })
+  })*/
+
 
 // Setup default port
 app.set('port', process.env.PORT || 5000);

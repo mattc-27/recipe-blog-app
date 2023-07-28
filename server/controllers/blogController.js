@@ -13,8 +13,8 @@ const listRecipes = async (req, res) => {
 // Get a recipe - blog
 const fetchBlogPost = async (req, res) => {
     try {
-        const { id } = req.params;
-        const recipe = await pool.query("SELECT * FROM recipes WHERE id = $1", [id]);
+        const { recipe_id } = req.params;
+        const recipe = await pool.query("SELECT * FROM recipes WHERE recipe_id = $1", [recipe_id]);
         res.json(recipe.rows[0]);
     } catch (err) {
         console.error(err.message)

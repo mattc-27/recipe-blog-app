@@ -8,7 +8,7 @@ import '../../main.css';
 export default function Layout() {
     
     const { userProfile } = useContext(UserContext);
-    const { userId } = useParams();
+    const { user_id } = useParams();
 
     /// Logout
     const logout = async () => {
@@ -20,12 +20,12 @@ export default function Layout() {
         <>
             <header>
                 <div className="appHeaderContent">
-                    <div className="appHeader">
+                    <div className="appTitleHeader">
                         <h1>Recipe App</h1>
                     </div>
                     <nav className='navBar'>
-                        <Link className='layoutLink' to={`/home/${userId}`}>Blog</Link>
-                        <Link className='layoutLink' to={`/dashboard/${userId}`}>Dashboard</Link>
+                        <Link className='layoutLink' to={`/home/${user_id}`}>Blog</Link>
+                        <Link className='layoutLink' to={`/dashboard/${user_id}`}>Dashboard</Link>
 
                         <button
                             id='logoutButton'

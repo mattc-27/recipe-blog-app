@@ -26,9 +26,9 @@ function UserProvider({ children }) {
 
     // fetch current user
     async function getUserDetails(user) {
-        const id = user;
+        const user_id = user;
         try {
-            const response = await fetch(`/api/user/${id}`);
+            const response = await fetch(`/api/user/${user_id}`);
             const data = await response.json();
             setUserProfile(data);
         } catch (error) {
